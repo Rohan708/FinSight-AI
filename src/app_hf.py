@@ -39,18 +39,17 @@ def split_text(text, chunk_size=1000, overlap=100):
         start = end - overlap
     return chunks
 
-
 def create_vectorstore(chunks):
-    """Create Chroma vectorstore with Hugging Face embeddings."""
     embedding = HuggingFaceEmbeddings(
         model_name="sentence-transformers/all-MiniLM-L6-v2"
     )
 
+    # Streamlit Cloud safe: in-memory Chroma
     return Chroma.from_texts(
         texts=chunks,
-        embedding=embedding,
-        persist_directory=CHROMA_DIR
+        embedding=embedding
     )
+
 
 
 def get_answer(vectorstore, query, model_name="models/gemini-2.5-flash"):
