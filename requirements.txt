@@ -13,3 +13,6 @@ tiktoken
 torch
 PyMuPDF
 google-generativeai
+streamlit-chat
+
+
