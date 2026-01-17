@@ -21,3 +21,5 @@ def create_vectorstore(text_chunks, persist_directory="chroma_store"):
 def query_vectorstore(vectorstore, query, k=3):
     results = vectorstore.similarity_search(query, k=k)
     return results
+
+
