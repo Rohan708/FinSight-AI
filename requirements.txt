@@ -12,4 +12,6 @@ pydantic
 tiktoken
 torch
 PyMuPDF
+google-generativeai
+
 
